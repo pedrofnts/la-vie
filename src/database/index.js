@@ -8,6 +8,6 @@ const Pacientes = require('../models/Pacientes');
 const connection = new Sequelize(dbConfig);
 
 Psicologos.init(connection);
-Pacientes.init (connection)
+Pacientes.init(connection);
 
 module.exports = connection;
