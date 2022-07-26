@@ -10,6 +10,9 @@ class Pacientes extends Model {
       sequelize
     })
   }
+  static associate(models) {
+    this.hasMany(models.Atendimentos, { foreignKey: 'pacientes_id', as: 'pacientes' });
+}
 }
 
 module.exports = Pacientes;

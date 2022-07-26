@@ -1,7 +1,5 @@
-const { username } = require('../config/database');
 const Atendimentos = require('../models/Atendimentos');
-const Psicologos = require('../models/Psicologos');
-const Pacientes = require('../models/Pacientes');
+const auth = require('../middlewares/auth')
 
 module.exports = {
   async index(req, res) {
@@ -22,19 +20,21 @@ module.exports = {
     return res.json(atendimentos);
   },
   async store(req, res) {
-    const { psicologos_id } = req.params;
-    const { pacientes_id, data_atendimento, observacao } = req.body;
+    const token = req.auth.id;
+    const { pacientes_id, data_atendimento, observacao} = req.body;
 
-    const findpsicologo = await Psicologos.findByPk(psicologos_id);
-
-    if(!findpsicologo) {
-      return res.status(400).json( { error: 'Psicólogo not found' });
+    const criarAtendimento = {
+      psicologos_id: token,
+      pacientes_id,
+      data_atendimento,
+      observacao,
     }
 
-    const atendimentos = await Atendimentos.create({ psicologos_id, pacientes_id, data_atendimento, observacao });
-    
-    return res.json(atendimentos)
+    console.log(req.auth.id)
+
+    await Atendimentos.create(criarAtendimento);
+
+    return res.status(201).json(criarAtendimento);
+
   },
-
-
 }

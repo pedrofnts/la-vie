@@ -10,9 +10,9 @@ class Atendimentos extends Model {
       tableName: 'atendimentos',
     })
   }
-  static associate(models) {
-    this.belongsTo(models.Psicologo, { foreignKey: 'psicologos_id', as: 'psicologos' });
-    this.belongsTo(models.Paciente, { foreignKey: 'pacientes_id', as: 'pacientes' });
+ static associate(models) {
+    this.belongsTo(models.Pacientes, { foreignKey: 'pacientes_id', as: 'pacientes' });
+    this.belongsTo(models.Psicologos, { foreignKey: 'psicologos_id', as: 'psicologos'});
   }
 }
 

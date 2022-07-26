@@ -1,4 +1,3 @@
-const { username } = require('../config/database');
 const Pacientes = require('../models/Pacientes');
 
 module.exports = {
@@ -52,5 +51,4 @@ module.exports = {
 
     return res.status(204).json();
   },
-
 }

@@ -2,12 +2,16 @@ const express = require('express');
 const PsicologosController = require('./controllers/PsicologosController');
 const PacientesController = require('./controllers/PacientesController');
 const AtendimentosController = require('./controllers/AtendimentosController');
+const authController = require('./controllers/authController')
+const psicologoCreateValidation = require('./validations/psicologos/create')
+const authLoginValidation = require('./validations/auth/login')
+const auth = require('./middlewares/auth')
 
 const routes = express.Router();
 
 routes.get('/psicologos', PsicologosController.index);
 routes.get('/psicologos/:id', PsicologosController.show);
-routes.post('/psicologos', PsicologosController.store);
+routes.post('/psicologos', psicologoCreateValidation, PsicologosController.store);
 routes.delete('/psicologos/:id', PsicologosController.delete);
 routes.put('/psicologos/:id', PsicologosController.update);
 
@@ -20,6 +24,8 @@ routes.put('/pacientes/:id', PacientesController.update);
 
 routes.get('/atendimentos', AtendimentosController.index);
 routes.get('/atendimentos/:id', AtendimentosController.show);
-routes.post('/atendimentos/:psicologos_id', AtendimentosController.store);
+routes.post('/atendimentos/', auth, AtendimentosController.store);
+
+routes.post('/login', authLoginValidation, authController.store);
 
 module.exports = routes;

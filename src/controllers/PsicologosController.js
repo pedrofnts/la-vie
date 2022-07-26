@@ -1,5 +1,5 @@
-const { username } = require('../config/database');
-const Psicologos = require('../models/Psicologos')
+const Psicologos = require('../models/Psicologos');
+const bcrypt = require("bcryptjs");
 
 module.exports = {
   async index(req, res) {
@@ -25,9 +25,11 @@ module.exports = {
   async store(req, res) {
     const { nome, email, senha, apresentacao } = req.body;
 
-    const psicologos = await Psicologos.create({ nome, email, senha, apresentacao });
+    const newSenha = bcrypt.hashSync(senha, 10);
+
+    const psicologos = await Psicologos.create({ nome, email, senha: newSenha, apresentacao });
     
-    return res.json(psicologos);
+    return res.status(201).json(psicologos);
   },
   async delete(req, res) {
     const { id } = req.params;
