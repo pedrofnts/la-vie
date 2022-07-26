@@ -11,7 +11,7 @@ class Pacientes extends Model {
     })
   }
   static associate(models) {
-    this.hasMany(models.Atendimentos, { foreignKey: 'pacientes_id', as: 'pacientes' });
+    this.hasMany(models.Atendimentos, { foreignKey: 'pacientes_id', as: 'atendimentos' });
 }
 }
 

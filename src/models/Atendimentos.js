@@ -12,7 +12,7 @@ class Atendimentos extends Model {
   }
  static associate(models) {
     this.belongsTo(models.Pacientes, { foreignKey: 'pacientes_id', as: 'pacientes' });
-    this.belongsTo(models.Psicologos, { foreignKey: 'psicologos_id', as: 'psicologos'});
+    this.belongsTo(models.Psicologos, { foreignKey: 'psicologos_id', as: 'psicologos' });
   }
 }
 

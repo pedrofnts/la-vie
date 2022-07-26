@@ -24,7 +24,7 @@ routes.put('/pacientes/:id', PacientesController.update);
 
 routes.get('/atendimentos', AtendimentosController.index);
 routes.get('/atendimentos/:id', AtendimentosController.show);
-routes.post('/atendimentos/', auth, AtendimentosController.store);
+routes.post('/atendimentos', auth, AtendimentosController.store);
 
 routes.post('/login', authLoginValidation, authController.store);
 

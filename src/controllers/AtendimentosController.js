@@ -20,21 +20,17 @@ module.exports = {
     return res.json(atendimentos);
   },
   async store(req, res) {
-    const token = req.auth.id;
-    const { pacientes_id, data_atendimento, observacao} = req.body;
-
-    const criarAtendimento = {
-      psicologos_id: token,
-      pacientes_id,
-      data_atendimento,
-      observacao,
-    }
-
-    console.log(req.auth.id)
-
-    await Atendimentos.create(criarAtendimento);
-
-    return res.status(201).json(criarAtendimento);
-
+      const atendimento = {
+          psicologos_id: req.auth.id,
+          pacientes_id: req.body.pacientes_id,
+          data_atendimento: req.body.data_atendimento,
+          observacao: req.body.observacao
+      }
+      try {
+          const criarAtendimento = await Atendimentos.create(atendimento)
+          res.status(201).json(crirAtendimento)
+      } catch (error) {
+          res.status(400).send(error)
+      }
   },
 }
