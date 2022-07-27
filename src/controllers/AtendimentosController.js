@@ -28,7 +28,7 @@ module.exports = {
       }
       try {
           const criarAtendimento = await Atendimentos.create(atendimento)
-          res.status(201).json(crirAtendimento)
+          res.status(201).json(criarAtendimento)
       } catch (error) {
           res.status(400).send(error)
       }

@@ -12,4 +12,8 @@ Psicologos.init(connection);
 Pacientes.init(connection);
 Atendimentos.init(connection);
 
+Psicologos.associate(connection.models);
+Pacientes.associate(connection.models);
+Atendimentos.associate(connection.models);
+
 module.exports = connection;
