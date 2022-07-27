@@ -9,14 +9,14 @@ module.exports = {
       autoIncrement: true,
       allowNull: false,
     },
-    psicologos_id: {
+    psicologo_id: {
       type: Sequelize.INTEGER,
       allowNull: false,
       references: { model: 'psicologos', key: 'id' },
       onUpdate: 'CASCADE',
       onDelete: 'CASCADE',
     },
-    pacientes_id: {
+    paciente_id: {
       type: Sequelize.INTEGER,
       allowNull: false,
       references: { model: 'pacientes', key: 'id' },

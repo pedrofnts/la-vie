@@ -27,7 +27,7 @@ const authController = {
       secret.key
       );
 
-    return res.json(token);
+    return res.status(200).json(token);
   },
 };
 module.exports = authController;

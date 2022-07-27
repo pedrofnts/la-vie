@@ -14,7 +14,7 @@ class Psicologos extends Model {
     })
   }
    static associate(models) {
-      this.hasMany(models.Atendimentos, { foreignKey: 'psicologos_id', as: 'atendimentos' });
+      this.hasMany(models.Atendimentos, { foreignKey: 'psicologo_id', as: 'atendimentos' });
   }
   }
 

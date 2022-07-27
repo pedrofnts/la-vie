@@ -21,6 +21,14 @@ module.exports = {
   async store(req, res) {
     const { nome, email, idade } = req.body;
 
+    const emailPaciente = await Pacientes.findOne({
+      where: { email: email },
+    });
+
+    if (emailPaciente) {
+      return res.status(401).json({ error: 'E-mail já existe' });
+    }
+
     const pacientes = await Pacientes.create({ nome, email, idade });
     
     return res.json(pacientes);

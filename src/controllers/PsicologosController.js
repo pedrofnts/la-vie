@@ -27,9 +27,17 @@ module.exports = {
 
     const newSenha = bcrypt.hashSync(senha, 10);
 
-    const psicologos = await Psicologos.create({ nome, email, senha: newSenha, apresentacao });
+    const emailPsicologo = await Psicologos.findOne({
+      where: { email: email },
+    });
+
+    if (emailPsicologo) {
+      return res.status(401).json({ error: "E-mail já cadastrado" });
+    }
+
+    await Psicologos.create({ nome, email, senha: newSenha, apresentacao });
     
-    return res.status(201).json(psicologos);
+    return res.status(201).json( { nome, email, apresentacao } );
   },
   async delete(req, res) {
     const { id } = req.params;

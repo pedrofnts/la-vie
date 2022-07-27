@@ -10,7 +10,7 @@ module.exports = {
     const { id } = req.params;
     const atendimentos = await Atendimentos.findOne({ 
       where: { id },
-      attributes: [ 'id', 'psicologos_id', 'pacientes_id', 'data_atendimento', 'observacao']
+      attributes: [ 'id', 'psicologo_id', 'paciente_id', 'data_atendimento', 'observacao']
     });
 
     if (!atendimentos) {
@@ -21,8 +21,8 @@ module.exports = {
   },
   async store(req, res) {
       const atendimento = {
-          psicologos_id: req.auth.id,
-          pacientes_id: req.body.pacientes_id,
+          psicologo_id: req.auth.id,
+          paciente_id: req.body.paciente_id,
           data_atendimento: req.body.data_atendimento,
           observacao: req.body.observacao
       }
