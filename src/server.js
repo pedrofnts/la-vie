@@ -11,4 +11,8 @@ app.use(express.json());
 app.use(routes);
 app.use(handleError);
 
-app.listen(3333);
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
