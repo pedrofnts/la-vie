@@ -6,7 +6,8 @@
 <h1 align="center">La Vie</h1>
 
 <p align="center">This project consists of an API for a clinic to manage psychologists, patients and medical records.</p>
-<p align="center"><a href="https://insomnia.rest/run/?label=La%20Vie%20API&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fpedrofnts%2Fla-vie%2Fmain%2FInsomnia.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a></p>
+<p align="center"><a href="https://insomnia.rest/run/?label=La%20Vie%20API&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fpedrofnts%2Fla-vie%2Fmain%2Fdocs%2Finsomnia.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
+</a></p>
 
 ## Techs
 
@@ -23,6 +24,9 @@
 - Patients CRUD
 - Appointments CRUD 
 
+## Documentation
+
+View the documentation on <a href="https://la-vie-sand.vercel.app/">Vercel.</a>
 
 ## Deployment
 
