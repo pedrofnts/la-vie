@@ -1,5 +1,5 @@
 const express = require('express');
-const psicologosController = require('./controllers/psicologosController.js');
+const psicologosController = require("./controllers/psicologosController.js");
 const pacientesController = require('./controllers/pacientesController.js');
 const atendimentosController = require('./controllers/atendimentosController.js');
 const dashboardController = require('./controllers/dashboardController.js');
