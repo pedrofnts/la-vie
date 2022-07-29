@@ -1,5 +1,5 @@
 const Atendimentos = require('../models/Atendimentos');
-const auth = require('../middlewares/auth')
+const auth = require('../middlewares/auth');
 
 module.exports = {
   async index(req, res) {
@@ -32,5 +32,5 @@ module.exports = {
       } catch (error) {
           res.status(400).send(error)
       }
-  },
+  }, 
 }

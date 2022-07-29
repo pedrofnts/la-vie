@@ -54,7 +54,6 @@ module.exports = {
     if (!pacientes) {
       return res.status(404).json({ error: 'Paciente não encontrado' });
     }
-
     await pacientes.update( { nome, email, idade } );
 
     return res.status(204).json();

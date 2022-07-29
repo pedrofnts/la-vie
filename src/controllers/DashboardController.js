@@ -23,5 +23,5 @@ module.exports = {
     const psicologos = await Psicologos.count();
 
     return res.status(200).json(atendimentos/psicologos)
-  }
-}
+  },
+} 

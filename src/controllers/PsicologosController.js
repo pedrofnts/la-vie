@@ -65,6 +65,5 @@ module.exports = {
     await psicologos.update( { nome, email, senha, apresentacao } );
 
     return res.status(204).json();
-  }
-
+  },
 }
