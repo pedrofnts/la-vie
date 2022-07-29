@@ -1,12 +1,12 @@
 const express = require('express');
-const psicologosController = require('./controllers/psicologosController');
-const pacientesController = require('./controllers/pacientesController');
-const atendimentosController = require('./controllers/atendimentosController');
-const dashboardController = require('./controllers/dashboardController');
-const authController = require('./controllers/authController');
-const psicologoCreateValidation = require('./validations/psicologos/create');
-const authLoginValidation = require('./validations/auth/login');
-const auth = require('./middlewares/auth');
+const psicologosController = require('./controllers/psicologosController.js');
+const pacientesController = require('./controllers/pacientesController.js');
+const atendimentosController = require('./controllers/atendimentosController.js');
+const dashboardController = require('./controllers/dashboardController.js');
+const authController = require('./controllers/authController.js');
+const psicologoCreateValidation = require('./validations/psicologos/create.js');
+const authLoginValidation = require('./validations/auth/login.js');
+const auth = require('./middlewares/auth.js');
 
 const routes = express.Router();
 
