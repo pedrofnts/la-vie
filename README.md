@@ -1,7 +1,4 @@
-<div>
-  <img src="https://user-images.githubusercontent.com/90655270/161388302-145d58d6-723a-4dc1-97e7-80133dfa4c3a.png" width="100px">
-  <img alt="Stack Hacker" src="https://img.shields.io/static/v1?label=stack&message=hacker&color=success&labelColor=grey">
-</div>
+
 
 <h1 align="center">La Vie</h1>
 
